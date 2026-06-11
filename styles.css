@@ -192,6 +192,14 @@ h3 {
 .notice-box h2,
 .notice-box h3 {
   margin-top: 0;
+  color: #0f172a;
+  opacity: 1;
+}
+
+.notice-box p,
+.notice-box li {
+  color: #475569;
+  opacity: 1;
 }
 
 .notice-box p:last-child {
