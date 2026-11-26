@@ -32,7 +32,26 @@
     ]
   }
   </script>
-</head>
+<style>
+.roof-home-hero {text-align:center}
+.roof-home-hero .hero-inner,.roof-home-intake .lead-wrap {display:grid;grid-template-columns:minmax(0,1fr);justify-items:center}
+.roof-home-hero h1,.roof-home-hero p {margin-inline:auto}
+.roof-home-hero .hero-actions {justify-content:center}
+.roof-home-hero aside {max-width:40rem;color:#102b43}
+.roof-hero-photo {margin-top:1.25rem}
+.roof-photo {display:block;width:100%;height:auto;object-fit:cover;border-radius:14px}
+.roof-hero-photo img {max-height:320px;object-position:center 65%}
+.roof-home-intake .lead-wrap>div {text-align:center}
+.roof-home-intake .lead-form {width:min(100%,42rem)}
+.roof-home-cards {gap:1.25rem}
+.roof-home-cards .card {min-height:0;box-shadow:0 9px 16px #0b213c55;background:#ffead3;border-color:#e5a86b}
+.roof-home-cards .card:nth-child(3n+2) {background:#d9f2ff;border-color:#81bbd5}
+.roof-home-cards .card:nth-child(3n) {background:#e9defb;border-color:#bea3de}
+.roof-photo-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:1.3rem 0}
+@media(max-width:580px){.roof-photo-grid{grid-template-columns:1fr}.roof-photo-grid img{max-height:220px}}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){.roof-home-cards .card:hover{animation:roof-rock 420ms ease-in-out}}
+@keyframes roof-rock {0%,100%{rotate:0deg}30%{rotate:-4deg}65%{rotate:4deg}}
+</style></head>
 <body>
 <header class="site-header">
   <div class="header-inner">
@@ -41,7 +60,7 @@
   </div>
 </header>
 <main>
-  <section class="hero">
+  <section class="hero roof-home-hero">
     <div class="container hero-inner">
       <div>
         <p class="eyebrow">Princeton, British Columbia</p>
@@ -51,11 +70,12 @@
       </div>
       <aside class="notice-box"><h2>Common roof concerns</h2><p>Active leaks, ceiling stains, wind damage, missing shingles, flashing problems, branch impact, and temporary protection needs.</p></aside>
     </div>
+    <div class="container roof-hero-photo"><img class="roof-photo" src="/assets/princeton-roof.webp" alt="Shingled house roof with inland hills behind it" width="768" height="512" loading="eager"></div>
   </section>
 
-  <section class="lead-section" id="request-form"><div class="container lead-wrap"><div><p class="eyebrow">Prefer not to call?</p><h2>Request roof repair help</h2><p>Send the basic details below so the roof concern can be reviewed.</p></div><form class="lead-form" action="https://api.web3forms.com/submit" method="POST" data-lead-form><input type="hidden" name="access_key" value="5422f3d7-8a31-4ada-9975-c98e15fb661d"><input type="hidden" name="subject" value="New Roof Repair Request Help lead"><input type="hidden" name="lead_source" value="RoofRepairRequest.com homepage"><input class="botcheck" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true"><label>Full name<input type="text" name="name" autocomplete="name" required></label><label>Phone number<input type="tel" name="phone" autocomplete="tel" inputmode="tel" required></label><label>Email <span class="optional">(optional)</span><input type="email" name="email" autocomplete="email"></label><label>City or postal code<input type="text" name="city_or_postal_code" autocomplete="postal-code" required></label><label>What help do you need?<select name="roof_concern" required><option value="">Choose one</option><option>Active roof leak</option><option>Storm or wind damage</option><option>Missing or damaged shingles</option><option>Flashing or roof penetration concern</option><option>Temporary tarp request</option><option>Not sure</option></select></label><label>Property and access details <span class="optional">(optional)</span><textarea name="details" rows="3" placeholder="What happened, when it started, access notes, and best time to reach you…"></textarea></label><label class="consent-label"><input type="checkbox" name="contact_consent" value="Yes" required><span>I agree that this request may be shared with an available service provider who may call, text, or email me about it.</span></label><button class="form-submit" type="submit">Send My Request</button><p class="form-note">Confirm availability, timing, pricing, access, and service details directly with the provider.</p><p class="form-status" data-form-status role="status" aria-live="polite"></p></form></div></section>
+  <section class="lead-section roof-home-intake" id="request-form"><div class="container lead-wrap"><div><p class="eyebrow">Prefer not to call?</p><h2>Request roof repair help</h2><p>Send the basic details below so the roof concern can be reviewed.</p></div><form class="lead-form" action="https://api.web3forms.com/submit" method="POST" data-lead-form><input type="hidden" name="access_key" value="5422f3d7-8a31-4ada-9975-c98e15fb661d"><input type="hidden" name="subject" value="New Roof Repair Request Help lead"><input type="hidden" name="lead_source" value="RoofRepairRequest.com homepage"><input class="botcheck" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true"><label>Full name<input type="text" name="name" autocomplete="name" required></label><label>Phone number<input type="tel" name="phone" autocomplete="tel" inputmode="tel" required></label><label>Email <span class="optional">(optional)</span><input type="email" name="email" autocomplete="email"></label><label>City or postal code<input type="text" name="city_or_postal_code" autocomplete="postal-code" required></label><label>What help do you need?<select name="roof_concern" required><option value="">Choose one</option><option>Active roof leak</option><option>Storm or wind damage</option><option>Missing or damaged shingles</option><option>Flashing or roof penetration concern</option><option>Temporary tarp request</option><option>Not sure</option></select></label><label>Property and access details <span class="optional">(optional)</span><textarea name="details" rows="3" placeholder="What happened, when it started, access notes, and best time to reach you…"></textarea></label><label class="consent-label"><input type="checkbox" name="contact_consent" value="Yes" required><span>I agree that this request may be shared with an available service provider who may call, text, or email me about it.</span></label><button class="form-submit" type="submit">Send My Request</button><p class="form-note">Confirm availability, timing, pricing, access, and service details directly with the provider.</p><p class="form-status" data-form-status role="status" aria-live="polite"></p></form></div></section>
 
-  <section><div class="container"><div class="section-title"><h2>Submit a Local Roof Repair Request</h2><p>Choose the concern that best matches what is happening at your Princeton home or property.</p></div><div class="grid">
+  <section><div class="container"><div class="section-title"><h2>Submit a Local Roof Repair Request</h2><p>Choose the concern that best matches what is happening at your Princeton home or property.</p></div><div class="grid roof-home-cards">
     <a class="card card-link" href="#request-form"><h3>Roof Repair Requests</h3><p>For missing shingles, flashing concerns, roof age, ceiling stains, and general repair questions.</p><p><strong>Learn more</strong></p></a>
     <a class="card card-link" href="/roof-leak-repair-princeton-bc/"><h3>Roof Leak Requests</h3><p>For active dripping, attic moisture, leaks after rain or snow, and stains spreading indoors.</p><p><strong>Learn more</strong></p></a>
     <a class="card card-link" href="/emergency-roof-repair-princeton-bc/"><h3>Urgent Roof Requests</h3><p>For sudden water entry, wind damage, impact damage, or temporary protection questions.</p><p><strong>Learn more</strong></p></a>
@@ -66,7 +86,7 @@
 
   <section class="section-soft"><div class="container content-split"><div><div class="section-title"><h2>Urgent Roof Guidance</h2><p>Some roof problems need quick attention, but safety comes first.</p></div><p>If there is electrical danger, structural collapse risk, fire, injury, active flooding near electrical fixtures, or immediate danger, contact emergency services first. If it is safe, move valuables away from active drips and place buckets or containers indoors.</p><p>Do not climb onto a wet, icy, steep, damaged, or unsafe roof. Photos from the ground or from a safe indoor location are usually safer than roof access.</p><div class="cta-row"><a class="phone-button" href="tel:+17787701639">Call (778) 770-1639</a><a class="secondary-button" href="/emergency-roof-repair-princeton-bc/">Urgent request info</a></div></div><aside class="notice-box"><h3>Helpful details</h3><p>Share when the issue started, whether water is entering indoors, visible storm damage, roof type if known, and any safe photos.</p></aside></div></section>
 
-  <section><div class="container"><div class="section-title"><h2>Common Roof Problems in Princeton Homes</h2><p>Local roofs can face heavy rain, snow, wind, freeze-thaw movement, and seasonal wear.</p></div><div class="grid two"><div class="card"><h3>Leak and moisture clues</h3><ul class="check-list"><li>Water stains on ceilings or walls</li><li>Active dripping during rain or snow melt</li><li>Attic moisture or damp insulation</li><li>Leaks around chimneys, vents, skylights, flashing, or pipe boots</li></ul></div><div class="card"><h3>Exterior damage clues</h3><ul class="check-list"><li>Missing, lifted, curled, or damaged shingles</li><li>Metal roof concerns or fastener issues</li><li>Storm debris, branch impact, or wind damage</li><li>Openings where temporary tarp help may be needed</li></ul></div></div></div></section>
+  <section><div class="container"><div class="section-title"><h2>Common Roof Problems in Princeton Homes</h2><p>Local roofs can face heavy rain, snow, wind, freeze-thaw movement, and seasonal wear.</p></div><div class="roof-photo-grid"><img class="roof-photo" src="/assets/chimney-flashing.webp" alt="Metal flashing around a brick chimney" width="768" height="512" loading="lazy"><img class="roof-photo" src="/assets/lifted-shingles.webp" alt="Lifted asphalt shingles at the roof edge" width="768" height="512" loading="lazy"><img class="roof-photo" src="/assets/temporary-tarp.webp" alt="Blue temporary tarp covering part of a shingle roof" width="768" height="512" loading="lazy"></div><div class="grid two"><div class="card"><h3>Leak and moisture clues</h3><ul class="check-list"><li>Water stains on ceilings or walls</li><li>Active dripping during rain or snow melt</li><li>Attic moisture or damp insulation</li><li>Leaks around chimneys, vents, skylights, flashing, or pipe boots</li></ul></div><div class="card"><h3>Exterior damage clues</h3><ul class="check-list"><li>Missing, lifted, curled, or damaged shingles</li><li>Metal roof concerns or fastener issues</li><li>Storm debris, branch impact, or wind damage</li><li>Openings where temporary tarp help may be needed</li></ul></div></div></div></section>
 
   <section class="section-soft"><div class="container"><div class="section-title"><h2>How Roof Repair Request Help Works</h2><p>A simple process for getting the right roof details in front of an available service provider.</p></div><div class="steps"><div class="step"><strong>Call or review the matching page.</strong> Start with the roof concern that fits your situation.</div><div class="step"><strong>Share the important details.</strong> Mention when the issue started, visible damage, indoor water entry, roof type if known, and safe photo availability.</div><div class="step"><strong>Discuss next steps.</strong> Confirm availability, access, pricing, timing, and service details directly with the provider.</div></div></div></section>
 
